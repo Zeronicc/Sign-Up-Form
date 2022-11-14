@@ -12,35 +12,40 @@
 <body>
     <div class="main-container">
         <div class="background-picture" alt="dog looking up">
-            <img src="doglogo.png" alt="DOGGY'S logo">
-            <h1>DOGGY'S</h1>
+            <div class="logo">
+                <img  class="dog-logo" src="doglogo.png" alt="DOGGY'S logo">
+                <h1>DOGGY'S</h1>
+            </div>
         </div>
-        <div class="information">
-            <h2>You ever wanted to scream at your dog for his action well scream at yourself it's your fault for not taking him to DOGGY'S. Sign up <i>now</i>, and for a limited time have 20% off for your first month!</h2>
-            <h2>You <i>know</i> what to do.</h2>
-            <form>
-                <label for="f_name">First Name
-                    <input type="text" id="f_name" name="first_name">
+        <div class="text">
+            <div class="information-container">
+                <h2 class="header">You ever wanted to scream at your dog for his action well scream at yourself it's your fault for not taking him to DOGGY'S. Sign up <i>now</i>, and for a limited time have 20% off for your first month!</h2>
+                <h2>You <i>know</i> you want to.</h2>
+                <h2 class="fill-text">Fill the following!</h2>
+                <form>
+                    <label for="f_name">First Name
+                        <input type="text" id="f_name" name="first_name">
+                    </label>
+                    <label for="l_name">Last Name
+                        <input type="text" id="l_name" name="last_name">
+                    </label>
+                    <label for="email">Email
+                    <input type="email" id="email" name="email">
                 </label>
-                <label for="l_name">Last Name
-                    <input type="text" id="l_name" name="last_name">
+                    <label for="p_number" maxlength="11">Phone Number
+                    <input type="number" id="p_number" name="phone_number">
                 </label>
-                <label for="email">Email
-                <input type="email" id="email" name="email">
-            </label>
-                <label for="p_number" maxlength="11">Phone Number
-                <input type="number" id="p_number" name="phone_number">
-            </label>
-                <label for="password">Password
-                <input type="password" id="password" name="password">
-            </label>
-                <label for="c_password">Confirm Password
-                <input type="password" id="c_password" name="c_password">
-            </label>
-               
-            </form>
-            <input type="submit" value="Create Account"> 
-            <p>Already haven an account? <a href="https://www.theodinproject.com/users/sign_in">Log in</a></p>
+                    <label for="password">Password
+                    <input type="password" id="password" name="password">
+                </label>
+                    <label for="c_password">Confirm Password
+                    <input type="password" id="c_password" name="c_password">
+                </label>
+                
+                </form>
+                <input type="submit" value="Create Account"> 
+                <p>Already haven an account? <a href="https://www.theodinproject.com/users/sign_in">Log in</a></p>
+            </div>
         </div>
     </div>
 </body>

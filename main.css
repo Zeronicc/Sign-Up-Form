@@ -2,41 +2,81 @@
 
 :root{
     --background-color: rgb(31, 31, 31);
+    --font-color: rgb(255, 255, 255);
 }
 body {
     background-color: var(--background-color);
-    
+    font-family: 'Courier New', Courier, monospace;
 }
 h1 {
     font-family: 'Rubik', sans-serif;
-    font-size:  3em;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.212);
-    height: fit-content;
-    width: 100%;
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 100%;
+    font-size:  3.5em;
+    color: var(--font-color);
+    margin: 0px;
 }
 h2{
-    width: 90%;
     text-align: left;
+    font-size: 1.8rem;
+    color: var(--font-color);
+    margin: 0px;
+    margin-left: 50px;
+    width: 85%;
 }
 
 form{
     display: flex;
     flex-flow: row wrap;
-    width: 80%;
+    max-width: 700px;
     justify-items: center;
     align-items: center;
-    margin: none;
+    margin-top: 15px;
+    margin-left: 50px;
+    gap: 30px;
+    justify-content: space-between;
 }
 
+label{
+    color: rgba(255, 255, 255, 0.801);
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 1.1em;
+
+}
+input{
+    width: 300px;
+    height: 25px;
+    margin: 2px 2px;
+    border-radius: 7px;
+    border: none;
+    animation: none;
+}
+input:focus{
+    border: 2px rgb(46, 144, 255) solid;
+    box-shadow: 1px 1px 7px rgba(119, 119, 119, 0.897);
+    outline: none;
+    margin: 0px;
+}
 .main-container{
     display: flex;
     width: 99vw;
-    height: 99vh;
+    height: 98vh;
     flex-flow: row wrap;
+}
+
+.logo{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgba(0, 0, 0, 0.411);
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 22%;
+    padding: 10px 0px;
+}
+.dog-logo{
+    width: 100px;
+    height: 100px;
 }
 
 .background-picture{
@@ -44,10 +84,25 @@ form{
     background-size: cover;
     background-color: var(--background-color);
     width: 39vw;
-    height: 100%;
+    height: 99vh;
 }
-.information{
+.text{
     width: 60vw;
+    height: 99vh;
     height: fit-content;
-    background-color: aliceblue;
+    background-color: var(--background-color);
+}
+.information-container{
+    height: 99vh;
+    display: flex;
+    flex-flow: column wrap;
+}
+.header{
+    word-spacing: -1px;
+    width: 75%;
+    margin-top: 15%;
+    margin-bottom: 30px;
+}
+.fill-text{
+    margin-top: 100px;
 }

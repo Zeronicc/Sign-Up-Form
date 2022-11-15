@@ -49,13 +49,21 @@ input{
     border-radius: 7px;
     border: none;
     animation: none;
+    font-size: 16px;
+    padding-left: 5px;
 }
 input:focus{
     border: 2px rgb(46, 144, 255) solid;
-    box-shadow: 1px 1px 7px rgba(119, 119, 119, 0.897);
+    box-shadow: 1px 1px 7px rgba(101, 164, 189, 0.897);
     outline: none;
     margin: 0px;
 }
+input:invalid{
+    border: 2px rgb(255, 50, 50) solid;
+    box-shadow: 1px 1px 7px rgba(255, 134, 134, 0.897);
+    margin: 0px;
+}
+
 .main-container{
     display: flex;
     width: 99vw;
@@ -105,4 +113,16 @@ input:focus{
 }
 .fill-text{
     margin-top: 100px;
+}
+#error-password , #error-confirm{
+    margin: 0px;
+    margin-left: 5px;
+    font-size: .8em;
+    position: relative;
+}
+#submit-btn{
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 10px;
+    font-size: 1.5em;
 }

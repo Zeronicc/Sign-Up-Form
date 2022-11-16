@@ -11,6 +11,7 @@ body {
     background-color: var(--background-color);
     font-family: 'Courier New', Courier, monospace;
 }
+
 h1 {
     font-family: 'Rubik', sans-serif;
     font-size:  3.5em;
@@ -26,16 +27,17 @@ h2{
     width: 90%;
 }
 
-i{color: #e49d74;}
+i{color: #b96534;}
 
 section{
     display: flex;
     flex-flow: row wrap;
-    max-width: 900px;
+    max-width: 700px;
     justify-items: center;
-    align-content: space-between;
+    align-items: center;
     margin-top: 15px;
     margin-left: var(--text-left-margin);
+    margin-right: 10px;
     gap: 30px;
     
     align-items: center;
@@ -46,14 +48,14 @@ label{
     display: flex;
     flex-flow: column wrap;
     font-size: 1.1em;
-    width: 40%;
-    justify-items: flex-start;
+    width: 45%;
+    height: 75px;
 }
 
 a{color: var(--font-color);}
 
 input{
-    width: auto;
+    width: 95%;
     height: 25px;
     margin: 2px 2px;
     border-radius: 7px;
@@ -146,11 +148,12 @@ input[type="submit"]{
     outline: none;
     width: fit-content;
     height: fit-content;
-    padding: 8px 10px;
+    padding:12px 35px;
     font-size: 1.5em;
     margin-left: var(--text-left-margin);
     margin-top: 45px;
-    background-color: #e49d74;
+    color: var(--font-color);
+    background-color: #b96534;
 }
 
 
@@ -161,10 +164,15 @@ input[type="submit"]:focus, input[type="submit"]:hover{
     box-shadow: 1px 1px 7px white;
 }
 
+#log-in{
+    color: var(--font-color);
+    margin-left: var(--text-left-margin);
+    font-size: 1.2em;
+    margin-top: 35px;
+    word-spacing: -5px;
+}
 @media only screen and (max-width: 700px) {
-    :root{
-        --text-left-margin: 25px
-    }
+    
     .information-container{
         justify-content: center;
         align-items: center;
@@ -174,33 +182,53 @@ input[type="submit"]:focus, input[type="submit"]:hover{
         height: 100%;
         top: 0%;
     }
-    h2{margin: 0px;}
-    .fill-text{
-        margin: 30px 0px;
+
+    .dog-logo{
+        height: 55px;
+        width: 55px;
     }
+    .img-source{font-size: 0.8em; padding: 5px 0px;}
+
+    h1{font-size: 3em}
+
+    h2{margin: 0px; font-size: 1.4em;}
+
+    .fill-text{margin: 30px 0px 20px 0px}
+
     section, form{
         margin: 0px;
         justify-content: center;
     }
+    form{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    section{
+        width: 95%;
+        text-align: center;
+    }
+
     .main-container{
         width: 100%;
         height: 100%;
     }
+
     .background-picture{
         width: 100%;
-        height: 20vh;
+        height: 18vh;
     }
+
     .header{
         width:90%;
-        font-size: 1.5em;
         height: fit-content;
         margin: 30px 0px;
     }
-    .text{
-        width: 100%;
-    }
 
-    input{
-        width: 225px;
-    }
+    .text{width: 100%;}
+
+    input{width: 95%;}
+    input[type="submit"]{margin: 10px 0px 10px 10px;}
+
+    #log-in{margin: 0px; margin-top: 30px;}
   }

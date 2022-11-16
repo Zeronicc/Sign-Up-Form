@@ -1,31 +1,39 @@
 const errorMessage = document.querySelector("#error-password")
 const errorConfirm = document.querySelector("#error-confirm")
-errorMessage.style.display = "none"
-errorConfirm.style.display = "none"
-function checkPass(form) {
+const body = document.querySelector(".main-container")
+
+function checkForm(form) {
     password = form.password.value;
     c_password = form.c_password.value;
+    return checkPass();
+   
+}
 
+
+function checkPass(){
+    errorConfirm.textContent = "";
+    errorMessage.textContent = "";
     if (password === '' && c_password == '' ){
-        errorMessage.style.display = 'block'
+        errorMessage.style.margin = "0px"
         errorMessage.textContent = "*Enter a Password";
-        errorConfirm.style.display = 'block'
+        errorConfirm.style.margin = "0px"
         errorConfirm.textContent = "*Enter a Confirm Password";
         return false;     
     }else if (c_password == ''){
-        errorConfirm.style.display = 'block'
+        errorConfirm.style.margin = '0px'
         errorConfirm.textContent = "*Enter a Confirm Password";
         return false;
     }else if(password == ''){
-        errorMessage.style.display = 'block'
+        errorMessage.style.margin = '0px'
         errorMessage.textContent = "*Enter a Password";
+        return false;
     }else if(password != c_password) {
-        errorMessage.style.display = 'block';
+        errorMessage.style.margin = '0px';
         errorMessage.textContent = "*Passwords do not match"
         return false;
     }
     else{
-        alert("Password Match: Welcome to GeeksforGeeks!")
+        body.style.display = "none";
         return true;
     }
 }

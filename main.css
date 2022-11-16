@@ -3,7 +3,10 @@
 :root{
     --background-color: rgb(31, 31, 31);
     --font-color: rgb(255, 255, 255);
+    --text-left-margin: 50px; 
 }
+
+
 body {
     background-color: var(--background-color);
     font-family: 'Courier New', Courier, monospace;
@@ -19,20 +22,23 @@ h2{
     font-size: 1.8rem;
     color: var(--font-color);
     margin: 0px;
-    margin-left: 50px;
-    width: 85%;
+    margin-left: var(--text-left-margin);
+    width: 90%;
 }
 
-form{
+i{color: #e49d74;}
+
+section{
     display: flex;
     flex-flow: row wrap;
-    max-width: 700px;
+    max-width: 900px;
     justify-items: center;
-    align-items: center;
+    align-content: space-between;
     margin-top: 15px;
-    margin-left: 50px;
+    margin-left: var(--text-left-margin);
     gap: 30px;
-    justify-content: space-between;
+    
+    align-items: center;
 }
 
 label{
@@ -40,10 +46,14 @@ label{
     display: flex;
     flex-flow: column wrap;
     font-size: 1.1em;
-
+    width: 40%;
+    justify-items: flex-start;
 }
+
+a{color: var(--font-color);}
+
 input{
-    width: 300px;
+    width: auto;
     height: 25px;
     margin: 2px 2px;
     border-radius: 7px;
@@ -67,7 +77,7 @@ input:invalid{
 .main-container{
     display: flex;
     width: 99vw;
-    height: 98vh;
+    height: 100%;
     flex-flow: row wrap;
 }
 
@@ -82,17 +92,27 @@ input:invalid{
     top: 22%;
     padding: 10px 0px;
 }
+
 .dog-logo{
     width: 100px;
     height: 100px;
 }
 
+.img-source{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.411);
+    padding: 10px 0px;
+    color: var(--font-color);
+}
 .background-picture{
     background: url(cutedog.jpg) no-repeat center top;
     background-size: cover;
     background-color: var(--background-color);
     width: 39vw;
     height: 99vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 .text{
     width: 60vw;
@@ -101,9 +121,9 @@ input:invalid{
     background-color: var(--background-color);
 }
 .information-container{
-    height: 99vh;
+    height: fit-content;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
 }
 .header{
     word-spacing: -1px;
@@ -115,14 +135,72 @@ input:invalid{
     margin-top: 100px;
 }
 #error-password , #error-confirm{
-    margin: 0px;
+    margin: 8px;
     margin-left: 5px;
     font-size: .8em;
-    position: relative;
+    color: rgb(255, 65, 65);
+    height: fit-content;
 }
-#submit-btn{
+
+input[type="submit"]{
+    outline: none;
     width: fit-content;
     height: fit-content;
     padding: 8px 10px;
     font-size: 1.5em;
+    margin-left: var(--text-left-margin);
+    margin-top: 45px;
+    background-color: #e49d74;
 }
+
+
+input[type="submit"]:focus, input[type="submit"]:hover{
+    outline: none;
+    border: none;
+    background-color: var(--font-color);
+    box-shadow: 1px 1px 7px white;
+}
+
+@media only screen and (max-width: 700px) {
+    :root{
+        --text-left-margin: 25px
+    }
+    .information-container{
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+    }
+    .logo{
+        height: 100%;
+        top: 0%;
+    }
+    h2{margin: 0px;}
+    .fill-text{
+        margin: 30px 0px;
+    }
+    section, form{
+        margin: 0px;
+        justify-content: center;
+    }
+    .main-container{
+        width: 100%;
+        height: 100%;
+    }
+    .background-picture{
+        width: 100%;
+        height: 20vh;
+    }
+    .header{
+        width:90%;
+        font-size: 1.5em;
+        height: fit-content;
+        margin: 30px 0px;
+    }
+    .text{
+        width: 100%;
+    }
+
+    input{
+        width: 225px;
+    }
+  }

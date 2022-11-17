@@ -29,17 +29,19 @@
                 <h2 class="fill-text">Fill the following!</h2>
                 <form class="form" onsubmit="return checkForm(this)">
                     <section>
-                        <label for="f_name">First Name
-                            <input type="text" id="fist_name" name="first_name">
+                        <label for="first_name">First Name
+                            <input type="text" id="first_name" name="first_name">
+                        <p id="first-name"></p>
                         </label>
-                        <label for="l_name">Last Name
+                        <label for="last_name">Last Name
                             <input type="text" id="last_name" name="last_name">
                         </label>
                         <label for="email">Email
                         <input type="email" id="email" name="email">
+                        <p id="contact"></p>
                         </label>
-                        <label for="p_number" maxlength="11">Phone Number
-                        <input type="tel" id="phone_number" name="phone_number">
+                        <label for="tel_number">Phone Number
+                        <input type="tel" id="tel_number" name="tel_number" minlength="10" maxlength="12">
                         </label>
                         <label for="password">Password
                         <input type="password" id="password" name="password">

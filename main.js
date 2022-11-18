@@ -2,6 +2,7 @@ const errorMessage = document.querySelector("#error-password");
 const errorConfirm = document.querySelector("#error-confirm");
 const noFirstName = document.querySelector("#first-name");
 const contactInfo = document.querySelector("#contact");
+const telError = document.querySelector("#tel-number")
 const body = document.querySelector(".main-container");
 const input = document.querySelectorAll("input");
 
@@ -46,6 +47,7 @@ function checkPass(){
         errorMessage.textContent = "*Enter a Password";
         return false;
     }else if(password.value.length < 6){
+        password.classList.add("error-border")
         errorMessage.textContent = "*At least 6 characters";
     }else if(password.value != c_password.value) {
         c_password.classList.add("error-border")
@@ -70,6 +72,8 @@ function checkName(){
 
 function checkContact(){
     contactInfo.textContent = "";
+    telError.textContent = "";
+    phoneNumber.placeholder = "";
     email.classList.remove("error-border");
     phoneNumber.classList.remove("error-border");
     if(email.value == '' && phoneNumber.value == ''){
@@ -77,8 +81,30 @@ function checkContact(){
         phoneNumber.classList.add("error-border");
         contactInfo.textContent = "*Require Any Contact Info";
         return false;
-    }else if(typeof phoneNumber.value === 'string' || phone.Number instanceof String){
+    }else if(!checkPhoneNumber(phoneNumber.value)){
         phoneNumber.classList.add("error-border");
+        phoneNumber.placeholder = "(123) 456-7890"
+        telError.textContent = "*Enter a Phone Number";
         return false;
+    }else if(!checkEmail(email.value)){
+        email.classList.add("error-border");
+        contactInfo.textContent = "*Enter a Valid Email";
+        return false
     }else{return true};
 };
+
+function checkPhoneNumber(str) {
+    const num = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    if(str == '') return true;
+    return num.test(str);
+};
+
+function checkEmail(str){
+    if(str == '') return true
+    return String(str)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+

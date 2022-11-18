@@ -77,5 +77,8 @@ function checkContact(){
         phoneNumber.classList.add("error-border");
         contactInfo.textContent = "*Require Any Contact Info";
         return false;
-    }else{return true}
+    }else if(typeof phoneNumber.value === 'string' || phone.Number instanceof String){
+        phoneNumber.classList.add("error-border");
+        return false;
+    }else{return true};
 };
